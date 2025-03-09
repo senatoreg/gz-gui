@@ -1,0 +1,71 @@
+Source: gz-gui
+Section: libs
+Priority: optional
+Maintainer: Giovanni Senatore <giovanni.senatore@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ gz-cmake,
+ libgz-utils-dev,
+ libgz-math-dev,
+ libgz-common-dev,
+ libgz-plugin-dev,
+ libgz-transport-dev,
+ libgz-rendering-dev,
+ libgz-msgs-dev,
+ gz-tools,
+ libprotobuf-dev,
+ libtinyxml2-dev,
+ qtbase5-dev | qtbase5-gles-dev,
+ qtdeclarative5-dev,
+ qtquickcontrols2-5-dev,
+Standards-Version: 4.6.2
+Homepage: https://gazebosim.org/
+#Vcs-Browser: https://salsa.debian.org/debian/gz-gui
+#Vcs-Git: https://salsa.debian.org/debian/gz-gui.git
+
+Package: libgz-gui-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libgz-gui9 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Builds on top of Qt to provide widgets which are useful when developing robotics applications - development files
+ Gazebo GUI builds on top of Qt to provide widgets which are useful when
+ developing robotics applications, such as a 3D view, plots, dashboard, etc,
+ and can be used together in a convenient unified interface.
+ .
+ Gazebo GUI ships with several widgets ready to use and offers a plugin
+ interface which can be used to add custom widgets.
+
+Package: libgz-gui9
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: Builds on top of Qt to provide widgets which are useful when developing robotics applications
+ Gazebo GUI builds on top of Qt to provide widgets which are useful when
+ developing robotics applications, such as a 3D view, plots, dashboard, etc,
+ and can be used together in a convenient unified interface.
+ .
+ Gazebo GUI ships with several widgets ready to use and offers a plugin
+ interface which can be used to add custom widgets.
+
+Package: ruby-gz-gui
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ ruby,
+ libgz-gui9 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Builds on top of Qt to provide widgets which are useful when developing robotics applications
+ Gazebo GUI builds on top of Qt to provide widgets which are useful when
+ developing robotics applications, such as a 3D view, plots, dashboard, etc,
+ and can be used together in a convenient unified interface.
+ .
+ Gazebo GUI ships with several widgets ready to use and offers a plugin
+ interface which can be used to add custom widgets.
