@@ -1,0 +1,20 @@
+diff --git a/include/gz/gui/qml/GzSplit.qml b/include/gz/gui/qml/GzSplit.qml
+index 87e521a7..e1c6e48b 100644
+--- a/include/gz/gui/qml/GzSplit.qml
++++ b/include/gz/gui/qml/GzSplit.qml
+@@ -353,10 +353,13 @@ SplitView {
+               var child = __items[i];
+ 
+               // Minimum width matches the largest minimum width among children
+-              if (child.Layout.minimumWidth > Layout.minimumWidth)
++              var maxMinimumWidth = 0;
++              if (child.Layout.minimumWidth > maxMinimumWidth)
+               {
+-                Layout.minimumWidth = child.Layout.minimumWidth;
++                maxMinimumWidth = child.Layout.minimumWidth;
+               }
++              Layout.minimumWidth = maxMinimumWidth;
++
+               heightSum += child.height;
+ 
+               var collapsed = child.Layout.maximumHeight == 50

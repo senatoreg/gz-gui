@@ -1,0 +1,13 @@
+diff --git a/include/gz/gui/qml/PluginMenu.qml b/include/gz/gui/qml/PluginMenu.qml
+index 890a7e7d..35a843fe 100644
+--- a/include/gz/gui/qml/PluginMenu.qml
++++ b/include/gz/gui/qml/PluginMenu.qml
+@@ -127,7 +127,7 @@ Popup {
+ 
+     delegate: ItemDelegate {
+       property variant pluginModel: model
+-      width: parent.width
++      width: parent ? parent.width : Popup.width
+       text: modelData
+       highlighted: ListView.isCurrentItem
+       onClicked: {
